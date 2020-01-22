@@ -69,7 +69,7 @@ public class HealthCheckServiceInstanceListSupplier
 					}
 					emitter.next(verifiedInstances);
 
-				}, 0, 100, TimeUnit.MILLISECONDS), FluxSink.OverflowStrategy.LATEST);
+				}, 0, 30, TimeUnit.SECONDS), FluxSink.OverflowStrategy.LATEST);
 	}
 
 	// TODO
