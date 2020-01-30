@@ -21,6 +21,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration;
 import org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerProperties;
 import org.springframework.cloud.client.loadbalancer.reactive.ReactiveLoadBalancerAutoConfiguration;
@@ -59,6 +60,7 @@ public class LoadBalancerAutoConfiguration {
 		return new LoadBalancerProperties();
 	}
 
+	@ConditionalOnMissingBean
 	@Bean
 	public LoadBalancerClientFactory loadBalancerClientFactory() {
 		LoadBalancerClientFactory clientFactory = new LoadBalancerClientFactory();
